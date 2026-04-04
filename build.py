@@ -47,6 +47,12 @@ def parse_blocks(md):
             i += 1
             continue
 
+        m = re.match(r'^!\[([^\]]*)\]\(([^)]+)\)$', line)
+        if m:
+            blocks.append(('img', m.group(1), m.group(2)))
+            i += 1
+            continue
+
         if re.match(r'^[-–—]\s', line):
             items = []
             while i < len(lines) and re.match(r'^[-–—]\s', lines[i]):
@@ -113,6 +119,8 @@ def render_block(b):
     if b[0] == 'code':
         content = highlight_http(b[2]) if b[1] == 'http' else esc(b[2])
         return f'      <pre><code>{content}</code></pre>\n'
+    if b[0] == 'img':
+        return f'      <img src="{esc(b[2])}" alt="{esc(b[1])}" loading="lazy">\n'
     return ''
 
 
@@ -152,7 +160,7 @@ def footer(landing=False):
       <nav>
         {nav}
       </nav>
-      <div class="copy">&copy; 2025 x-amz</div>
+      <div class="copy">&copy; 2026 x-amz</div>
     </footer>'''
 
 
@@ -231,7 +239,7 @@ def build_landing():
 {abstract}    </div>
 
     <div class="cta">
-      <a class="btn" href="{store}">Download on the App Store</a>
+      <a class="badge" href="{store}"><img src="img/appstore.svg" alt="Download on the App Store"></a>
     </div>
 
     <hr>
@@ -239,10 +247,26 @@ def build_landing():
 {sec_html}    <div class="ornament">&#x2726; &#x2726; &#x2726;</div>
 
     <div class="cta">
-      <a class="btn" href="{store}">Download on the App Store</a>
+      <a class="badge" href="{store}"><img src="img/appstore.svg" alt="Download on the App Store"></a>
     </div>
 {footer(landing=True)}
   </div>
+  <div class="lightbox" onclick="this.classList.remove('active')">
+    <img src="" alt="">
+  </div>
+  <script>
+    document.querySelectorAll('.section img').forEach(function(img) {{
+      img.addEventListener('click', function() {{
+        var lb = document.querySelector('.lightbox');
+        lb.querySelector('img').src = img.src;
+        lb.querySelector('img').alt = img.alt;
+        lb.classList.add('active');
+      }});
+    }});
+    document.addEventListener('keydown', function(e) {{
+      if (e.key === 'Escape') document.querySelector('.lightbox').classList.remove('active');
+    }});
+  </script>
 </body>
 </html>
 '''

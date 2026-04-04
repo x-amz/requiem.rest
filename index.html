@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Requiem — HTTP for Shortcuts</title>
+  <title>requiem — .http for Shortcuts</title>
   <meta name="description" content="The HTTP client built for Apple Shortcuts. Build requests with chainable actions, send them, and view syntax-highlighted results.">
   <meta name="theme-color" content="#0c0a0e">
-  <meta property="og:title" content="Requiem — HTTP for Shortcuts">
+  <meta property="og:title" content="requiem — .http for Shortcuts">
   <meta property="og:description" content="The HTTP client built for Apple Shortcuts. Build requests with chainable actions, send them, and view syntax-highlighted results.">
   <meta property="og:image" content="https://requiem.rest/icon.png">
   <meta property="og:url" content="https://requiem.rest">
@@ -20,28 +20,28 @@
   <div class="page">
 
     <header class="masthead">
-      <img src="icon.png" alt="Requiem" width="88" height="88">
-      <div class="wordmark">Requiem</div>
-      <div class="tagline">HTTP for Shortcuts</div>
+      <img src="icon.png" alt="requiem" width="88" height="88">
+      <div class="wordmark">requiem</div>
+      <div class="tagline">.http for Shortcuts</div>
     </header>
 
     <hr>
 
     <div class="meta">
-      <div class="row"><span class="label">Status</span><span class="value">v1.0</span></div>
+      <div class="row"><span class="label">Status</span><span class="value">v0.3.1</span></div>
       <div class="row"><span class="label">Category</span><span class="value">Developer Tools</span></div>
-      <div class="row"><span class="label">Platform</span><span class="value">iOS</span></div>
+      <div class="row"><span class="label">Platform</span><span class="value">iOS · iPadOS · macOS</span></div>
       <div class="row"><span class="label">Format</span><span class="value">.http · .rest</span></div>
     </div>
 
     <div class="abstract">
       <h2>Abstract</h2>
       <p class="lead">The HTTP client built for Apple Shortcuts.</p>
-      <p>Build requests with chainable actions. Send them. View syntax-highlighted results. Share with a link. All from your iPhone.</p>
+      <p>Build requests with chainable actions. Send them. View syntax-highlighted results. Share with a link.</p>
     </div>
 
     <div class="cta">
-      <a class="btn" href="#">Download on the App Store</a>
+      <a class="badge" href="https://apps.apple.com/us/app/requiem-http/id6751903685"><img src="img/appstore.svg" alt="Download on the App Store"></a>
     </div>
 
     <hr>
@@ -49,17 +49,18 @@
     <div class="section">
       <div class="section-id">&sect;1</div>
       <h2>Shortcuts-First</h2>
-      <p>Requiem gives Apple Shortcuts real HTTP capabilities. 13 chainable actions let you build requests step by step — set methods, add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.</p>
+      <p>requiem gives Apple Shortcuts real HTTP capabilities. Chainable actions let you build requests step by step — set methods, add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.</p>
       <p class="aside"><em>No scripting required. Just connect the blocks.</em></p>
+      <img src="img/shortcuts.png" alt="Shortcuts actions chained to build and send a request" loading="lazy">
     </div>
 
     <div class="section">
       <div class="section-id">&sect;2</div>
       <h2>The .http Standard</h2>
-      <p>Requests live as <code class="il">.http</code> files — the same format used by VS Code REST Client and JetBrains HTTP Client. Portable. Readable. Versionable. Not locked in a proprietary database.</p>
-      <pre><code><span class="t-m">POST</span> <span class="t-u">https://api.example.com/users</span>
+      <p>Requests live as <code class="il">.http</code> files — the same format used by VS Code REST Client, JetBrains, and httpYac. Portable. Readable. Versionable. Not locked in a proprietary database. <a href="https://http-files.org">Read the spec.</a></p>
+      <pre><code><span class="t-m">POST</span> <span class="t-u">https://httpbin.org/post</span>
 <span class="t-hn">Content-Type</span><span class="t-hv">: application/json</span>
-<span class="t-hn">Authorization</span><span class="t-hv">: Bearer token123</span>
+<span class="t-hn">Accept</span><span class="t-hv">: application/json</span>
 
 {
   <span class="t-k">"name"</span>: <span class="t-s">"Alice"</span>,
@@ -71,30 +72,27 @@
       <div class="section-id">&sect;3</div>
       <h2>Syntax Highlighting</h2>
       <p>Every element is color-coded: methods, URLs, headers, status codes by class. JSON, XML, HTML, and form bodies are parsed and highlighted individually. Long headers wrap to fit your screen.</p>
+      <img src="img/detail.png" alt="Syntax-highlighted request and response" loading="lazy">
     </div>
 
     <div class="section">
       <div class="section-id">&sect;4</div>
       <h2>Share With a Link</h2>
       <p>Encode any request as a <code class="il">req.to</code> URL. The full request — method, headers, body — is encoded in the URL itself. No account required. No server involved.</p>
+      <p><a href="https://req.to/#UE9TVCBodHRwczovL2h0dHBiaW4ub3JnL3Bvc3QKQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uCkFjY2VwdDogYXBwbGljYXRpb24vanNvbg.ewogICJuYW1lIjogIkFsaWNlIiwKICAicm9sZSI6ICJhZG1pbiIKfQ">🔗 Try it.</a></p>
     </div>
 
     <div class="section">
       <div class="section-id">&sect;5</div>
       <h2>Rich File Previews</h2>
       <p><code class="il">.http</code> files show custom thumbnails in Files, Spotlight, and Share Sheets — method, domain, headers, and body at a glance. QuickLook renders full syntax-highlighted content.</p>
-    </div>
-
-    <div class="section">
-      <div class="section-id">&sect;6</div>
-      <h2>Pull to Send</h2>
-      <p>Pull down on a request to send it. The response bounces in with a spring animation.</p>
+      <img src="img/preview.png" alt="Rich file preview in Messages" loading="lazy">
     </div>
 
     <div class="ornament">&#x2726; &#x2726; &#x2726;</div>
 
     <div class="cta">
-      <a class="btn" href="#">Download on the App Store</a>
+      <a class="badge" href="https://apps.apple.com/us/app/requiem-http/id6751903685"><img src="img/appstore.svg" alt="Download on the App Store"></a>
     </div>
 
     <footer>
@@ -103,8 +101,24 @@
         <a href="/privacy">Privacy</a>
         <a href="https://x-amz.dev">x-amz</a>
       </nav>
-      <div class="copy">&copy; 2025 x-amz</div>
+      <div class="copy">&copy; 2026 x-amz</div>
     </footer>
   </div>
+  <div class="lightbox" onclick="this.classList.remove('active')">
+    <img src="" alt="">
+  </div>
+  <script>
+    document.querySelectorAll('.section img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        var lb = document.querySelector('.lightbox');
+        lb.querySelector('img').src = img.src;
+        lb.querySelector('img').alt = img.alt;
+        lb.classList.add('active');
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.querySelector('.lightbox').classList.remove('active');
+    });
+  </script>
 </body>
 </html>

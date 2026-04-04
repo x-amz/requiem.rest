@@ -74,7 +74,7 @@ body::before {
   font-weight: 400;
   color: var(--gold);
   letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-variant: small-caps;
   margin-top: 1rem;
   text-shadow: 0 0 28px rgba(196, 154, 44, 0.15);
 }
@@ -188,6 +188,62 @@ hr.subtle {
   font-style: italic;
 }
 
+/* ── Section images ── */
+
+.section:has(> img) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.section:has(> img) > *:not(img) {
+  grid-column: 1;
+}
+
+.section > img {
+  grid-column: 2;
+  grid-row: 1 / span 10;
+  align-self: center;
+  max-height: 300px;
+  width: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.section > img:hover {
+  border-color: var(--gold-dim);
+}
+
+/* ── Lightbox ── */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.92);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
 /* ── Code blocks ── */
 
 pre {
@@ -257,23 +313,18 @@ ul li::before {
   margin: 2rem 0;
 }
 
-.cta a.btn {
+.cta a.badge {
   display: inline-block;
-  color: var(--bg);
-  background: var(--gold);
-  padding: 0.65rem 2rem;
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.2s ease, box-shadow 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
-.cta a.btn:hover {
-  background: var(--gold-bright);
-  box-shadow: 0 0 24px rgba(196, 154, 44, 0.2);
+.cta a.badge:hover {
+  opacity: 0.85;
+}
+
+.cta a.badge img {
+  height: 44px;
+  width: auto;
 }
 
 /* ── Links ── */
@@ -370,4 +421,6 @@ footer a:hover {
   .masthead img { width: 72px; height: 72px; border-radius: 15px; }
   .masthead .wordmark { font-size: 1.4rem; }
   pre { padding: 1rem; font-size: 0.75rem; }
+  .section:has(> img) { display: block; }
+  .section > img { display: block; max-height: 260px; margin: 1rem auto; }
 }

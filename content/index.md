@@ -1,32 +1,34 @@
 ---
-title: Requiem
-tagline: HTTP for Shortcuts
+title: requiem
+tagline: .http for Shortcuts
 description: The HTTP client built for Apple Shortcuts. Build requests with chainable actions, send them, and view syntax-highlighted results.
-status: v1.0
+status: v0.3.1
 category: Developer Tools
-platform: iOS
+platform: iOS · iPadOS · macOS
 format: .http · .rest
-appstore: #
+appstore: https://apps.apple.com/us/app/requiem-http/id6751903685
 ---
 
 The HTTP client built for Apple Shortcuts.
 
-Build requests with chainable actions. Send them. View syntax-highlighted results. Share with a link. All from your iPhone.
+Build requests with chainable actions. Send them. View syntax-highlighted results. Share with a link.
 
 ## Shortcuts-First
 
-Requiem gives Apple Shortcuts real HTTP capabilities. 13 chainable actions let you build requests step by step — set methods, add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.
+requiem gives Apple Shortcuts real HTTP capabilities. Chainable actions let you build requests step by step — set methods, add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.
 
 *No scripting required. Just connect the blocks.*
 
+![Shortcuts actions chained to build and send a request](img/shortcuts.png)
+
 ## The .http Standard
 
-Requests live as `.http` files — the same format used by VS Code REST Client and JetBrains HTTP Client. Portable. Readable. Versionable. Not locked in a proprietary database.
+Requests live as `.http` files — the same format used by VS Code REST Client, JetBrains, and httpYac. Portable. Readable. Versionable. Not locked in a proprietary database. [Read the spec.](https://http-files.org)
 
 ```http
-POST https://api.example.com/users
+POST https://httpbin.org/post
 Content-Type: application/json
-Authorization: Bearer token123
+Accept: application/json
 
 {
   "name": "Alice",
@@ -38,14 +40,17 @@ Authorization: Bearer token123
 
 Every element is color-coded: methods, URLs, headers, status codes by class. JSON, XML, HTML, and form bodies are parsed and highlighted individually. Long headers wrap to fit your screen.
 
+![Syntax-highlighted request and response](img/detail.png)
+
 ## Share With a Link
 
 Encode any request as a `req.to` URL. The full request — method, headers, body — is encoded in the URL itself. No account required. No server involved.
+
+[🔗 Try it.](https://req.to/#UE9TVCBodHRwczovL2h0dHBiaW4ub3JnL3Bvc3QKQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uCkFjY2VwdDogYXBwbGljYXRpb24vanNvbg.ewogICJuYW1lIjogIkFsaWNlIiwKICAicm9sZSI6ICJhZG1pbiIKfQ)
 
 ## Rich File Previews
 
 `.http` files show custom thumbnails in Files, Spotlight, and Share Sheets — method, domain, headers, and body at a glance. QuickLook renders full syntax-highlighted content.
 
-## Pull to Send
+![Rich file preview in Messages](img/preview.png)
 
-Pull down on a request to send it. The response bounces in with a spring animation.
