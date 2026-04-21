@@ -22,6 +22,9 @@ No dependencies beyond Python 3 stdlib. Outputs `index.html`, `support/index.htm
 - `content/support.md`, `content/privacy.md` — doc pages built via `build_doc()`
 - `style.css` — shared stylesheet, dark theme with gold/serif aesthetic
 - `icon.png`, `requiem_aeternam.jpeg` — static assets
+- `img/` — image assets: `appstore.svg` (App Store badge), `detail.png`, `preview.png`, `shortcuts.png` (screenshots/promo art)
+
+New App Store marketing badges and assets can be generated at: https://toolbox.marketingtools.apple.com/en-us/app-store/us/app/6751903685
 
 The build pipeline: `parse_frontmatter()` → `parse_blocks()` → `render_block()` / `inline()`. The landing page (`build_landing()`) has special handling for sections with `§` numbering, an abstract block, and CTA buttons. Doc pages (`build_doc()`) are simpler single-column layouts.
 

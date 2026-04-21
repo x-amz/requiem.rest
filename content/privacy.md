@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 description: Privacy policy for Requiem, the HTTP client for Apple Shortcuts.
-effective: March 2025
+effective: April 2026
 ---
 
 Requiem does not collect, store, or transmit personal data.

@@ -2,7 +2,7 @@
 title: requiem
 tagline: .http for Shortcuts
 description: The HTTP client built for Apple Shortcuts. Build requests with chainable actions, send them, and view syntax-highlighted results.
-status: v0.3.1
+status: v0.3.3
 category: Developer Tools
 platform: iOS · iPadOS · macOS
 format: .http · .rest
@@ -15,7 +15,7 @@ Build requests with chainable actions. Send them. View syntax-highlighted result
 
 ## Shortcuts-First
 
-requiem gives Apple Shortcuts real HTTP capabilities. Chainable actions let you build requests step by step — set methods, add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.
+requiem gives Apple Shortcuts real HTTP capabilities. Chainable actions let you build requests step by step — add headers, compose bodies, append paths, add query parameters — then send. Each action passes its result to the next.
 
 *No scripting required. Just connect the blocks.*
 
